@@ -1,20 +1,32 @@
-# Event Management API
+# 🎪 Event Management API
 
-Sistema de gestão de eventos com controle de vagas, inscrições e validação de e-mail duplicado. Controle de lotação automático.
+Gerenciamento de eventos com inscrições, controle de vagas e lista de espera.
 
-## Tecnologias
-Java 17 · Spring Boot 3.2 · Spring Data JPA · PostgreSQL · Maven · Swagger/OpenAPI
+## 📋 Sobre o Projeto
 
-## Funcionalidades
-- CRUD de eventos com vagas máximas e categorias
-- Inscrição de participantes com validação de lotação e e-mail duplicado
-- Atualização automática do contador de inscritos
-- Filtros por status (UPCOMING, ONGOING, COMPLETED) e categoria
-- Lista completa de inscritos por evento
+API para criar e gerenciar eventos (shows, workshops, conferências). Controla o número máximo de vagas, registra inscrições e cancela automaticamente vagas não confirmadas. Ideal para sistemas de ingressos e eventos corporativos.
 
-## Como Executar
-```bash
-mvn spring-boot:run
-# Acesse: http://localhost:8101/swagger-ui.html
-```
-**Patryck Martins Langsdorff** — Java Back End Developer Junior | [LinkedIn](https://www.linkedin.com/in/patryck-martins-langsdorff)
+## ✨ Funcionalidades
+
+- ✅ Criar eventos com data, local e capacidade máxima
+- ✅ Classificar eventos: CONFERENCE, WORKSHOP, SHOW, SPORTS
+- ✅ Inscrever participante com validação de vagas
+- ✅ Cancelar inscrição
+- ✅ Controle automático de vagas disponíveis
+- ✅ Listar participantes inscritos
+- ✅ Listar eventos futuros
+- ✅ Status do evento: UPCOMING, ONGOING, FINISHED, CANCELLED
+
+## 🔗 Endpoints
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET/POST | `/api/events` | Listar / Criar evento |
+| GET | `/api/events/upcoming` | Eventos futuros |
+| GET | `/api/events/{id}/participants` | Listar inscritos |
+| POST | `/api/events/{id}/register/{userId}` | Inscrever participante |
+| DELETE | `/api/events/{id}/register/{userId}` | Cancelar inscrição |
+
+## 🛠️ Tecnologias
+
+- Java 17 · Spring Boot 3.2 · PostgreSQL · Maven · Lombok
